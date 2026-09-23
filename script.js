@@ -77,6 +77,19 @@ function changeQty(id, delta) {
 
 function handleWhatsAppOrder(e) {
   e.preventDefault();
+
+  const nom = document.getElementById('input-nom').value.trim();
+  const telephone = document.getElementById('input-telephone').value.trim();
+  const quartier = document.getElementById('input-quartier').value.trim();
+
+  if (!nom || !telephone || !quartier) {
+    alert("Merci de renseigner votre nom, votre téléphone et votre quartier avant de commander.");
+    if (!nom) document.getElementById('input-nom').focus();
+    else if (!telephone) document.getElementById('input-telephone').focus();
+    else document.getElementById('input-quartier').focus();
+    return;
+  }
+
   const orderLines = [];
   let total = 0;
 
@@ -93,6 +106,11 @@ function handleWhatsAppOrder(e) {
     return;
   }
 
+  // Mémorise les infos client pour la prochaine commande
+  try {
+    localStorage.setItem('ndoleOrClient', JSON.stringify({ nom, telephone, quartier }));
+  } catch (err) {}
+
   const message =
 `Bonjour Le Ndolé d'Or ! 👋🍲
 Je souhaite passer une commande :
@@ -100,8 +118,8 @@ Je souhaite passer une commande :
 ${orderLines.join('\n')}
 
 💰 *Total : ${total.toLocaleString('fr-FR')} FCFA*
-📍 *Livraison à :* [Indiquez votre quartier/adresse à Douala]
-📞 *Nom & Contact :* [Votre nom]`;
+📍 *Livraison à :* ${quartier}
+📞 *Nom & Contact :* ${nom} - ${telephone}`;
 
   const encodedMessage = encodeURIComponent(message);
   const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
@@ -111,4 +129,13 @@ ${orderLines.join('\n')}
 document.addEventListener('DOMContentLoaded', () => {
   updateCartUI();
   filterMenu('tous');
+
+  try {
+    const saved = JSON.parse(localStorage.getItem('ndoleOrClient'));
+    if (saved) {
+      document.getElementById('input-nom').value = saved.nom || '';
+      document.getElementById('input-telephone').value = saved.telephone || '';
+      document.getElementById('input-quartier').value = saved.quartier || '';
+    }
+  } catch (err) {}
 });
