@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr" class="h-full bg-[#14231c]">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Ndolé d'Or | Menu &amp; Commande WhatsApp</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-full bg-[#0d1c16] text-[#1c1815] flex justify-center py-0 sm:py-6 antialiased selection:bg-[#d4a316] selection:text-[#11241c]">
+
+  <main class="w-full max-w-[440px] bg-[#fbf9f4] min-h-screen sm:min-h-[890px] sm:rounded-[36px] shadow-2xl flex flex-col relative pb-32 border border-[#234537]/20 overflow-hidden">
+
+    <div class="bg-[#122e23] px-4 py-2 flex items-center justify-between text-xs text-[#eedfc0] border-b border-[#244b3c]">
+      <div class="flex items-center gap-1.5 font-medium">
+        <span class="w-2 h-2 rounded-full bg-[#22c55e] animate-pulse"></span>
+        <span class="text-[#e2f7ea]">Cuisine ouverte</span>
+        <span class="text-[#a4b8ad]">• Livraison express Douala</span>
+      </div>
+      <div class="flex items-center gap-1 text-[11px] font-semibold text-[#f5d77f]"><span>⚡ 30-45 min</span></div>
+    </div>
+
+    <header class="bg-gradient-to-b from-[#143729] via-[#163d2e] to-[#1a4434] text-white px-5 pt-5 pb-6 relative shadow-md">
+      <div class="absolute -right-10 -top-10 w-44 h-44 bg-[#d4a316]/10 rounded-full blur-2xl pointer-events-none"></div>
+      <div class="flex items-start justify-between gap-3 relative z-10">
+        <div class="flex items-center gap-3.5">
+          <div class="relative w-16 h-16 rounded-2xl overflow-hidden ring-2 ring-[#d4a316]/70 shadow-lg bg-[#0e251c] flex-shrink-0">
+            <img src="images/logo.jpg" alt="Logo Le Ndolé d'Or" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5 mb-0.5">
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-[#d4a316]/20 text-[#f7d37a] border border-[#d4a316]/40">Spécialités Camerounaises</span>
+            </div>
+            <h1 class="font-serif-title text-2xl font-extrabold tracking-tight text-[#fffaf0] leading-tight">Le Ndolé d'Or</h1>
+            <div class="flex items-center gap-1.5 text-xs text-[#d3e5dc] mt-1">
+              <svg class="w-3.5 h-3.5 text-[#e0a925] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+              <span>Bonapriso, Douala</span>
+              <span class="text-[#88aa98]">•</span>
+              <span class="text-[#34d399] font-semibold flex items-center gap-1">Ouvert maintenant</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 bg-[#0d261c]/75 backdrop-blur-sm border border-[#2d5845] rounded-xl p-3 flex items-center justify-between text-xs text-[#e8f3ed]">
+        <div class="flex items-center gap-2">
+          <span class="text-base">🔥</span>
+          <p class="leading-snug">Plats frais mijotés du jour. <strong class="text-[#f5d77f]">Commandez et recevez à chaud !</strong></p>
+        </div>
+        <a href="tel:+237691691945" class="text-[11px] font-bold text-[#f7d37a] hover:underline flex items-center gap-0.5 ml-2 flex-shrink-0">Aide</a>
+      </div>
+
+      <div class="flex items-center gap-2 mt-4 overflow-x-auto no-scrollbar pt-1" id="category-tabs">
+        <button data-filter="tous" onclick="filterMenu('tous')" class="tab-btn px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#d4a316] text-[#0f271d] shadow-sm whitespace-nowrap">Tous les plats (6)</button>
+        <button data-filter="plat" onclick="filterMenu('plat')" class="tab-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#214b39]/80 text-[#dbeae2] hover:bg-[#255541] border border-[#31624c] whitespace-nowrap">Plats chauds</button>
+        <button data-filter="accompagnement" onclick="filterMenu('accompagnement')" class="tab-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#214b39]/80 text-[#dbeae2] hover:bg-[#255541] border border-[#31624c] whitespace-nowrap">Accompagnements</button>
+        <button data-filter="boisson" onclick="filterMenu('boisson')" class="tab-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#214b39]/80 text-[#dbeae2] hover:bg-[#255541] border border-[#31624c] whitespace-nowrap">Boissons</button>
+      </div>
+    </header>
+
+    <div class="p-4 space-y-3.5 flex-1">
+      <div class="flex items-center justify-between px-1">
+        <h2 class="font-serif-title text-lg font-bold text-[#143729]">La Carte du Chef</h2>
+        <span class="text-xs text-[#7d736a] font-medium">Prix nets en FCFA</span>
+      </div>
+
+      <article class="bg-white rounded-2xl p-3.5 shadow-sm border border-[#e8e2d5] hover:border-[#d4a316]/60 transition-all flex gap-3.5 relative overflow-hidden" data-id="ndole" data-name="Ndolé complet" data-price="3500" data-category="plat">
+        <div class="relative w-28 h-28 rounded-xl overflow-hidden flex-shrink-0 bg-[#f3efe6]">
+          <img src="images/ndole-complet.jpeg" alt="Ndolé complet" class="w-full h-full object-cover" loading="lazy">
+          <span class="absolute top-1.5 left-1.5 bg-[#d4a316] text-[#122b20] text-[10px] font-extrabold px-1.5 py-0.5 rounded shadow">★ Incontournable</span>
+        </div>
+        <div class="flex flex-col justify-between flex-1 min-w-0">
+          <div>
+            <h3 class="font-serif-title font-bold text-base text-[#112a1f] leading-snug truncate">Ndolé complet</h3>
+            <p class="text-xs text-[#6e665e] line-clamp-2 mt-1 leading-relaxed">Feuilles de ndolé mijotées, crevettes royales, viande de bœuf tendre, poisson fumé &amp; arachides pilées.</p>
+          </div>
+          <div class="flex items-center justify-between mt-2 pt-1 border-t border-[#f4f0e8]">
+            <span class="text-base font-extrabold text-[#143729]">3 500 <span class="text-xs font-semibold text-[#8c7a65]">FCFA</span></span>
+            <div class="flex items-center gap-2 bg-[#f6f2e9] rounded-xl p-1 border border-[#e4dccf]">
+              <button onclick="changeQty('ndole', -1)" aria-label="Diminuer quantité" class="w-7 h-7 rounded-lg bg-white text-[#143729] font-bold text-sm shadow-sm flex items-center justify-center active:scale-90 transition hover:bg-[#eae3d4]">-</button>
+              <span id="qty-ndole" class="w-5 text-center text-sm font-extrabold text-[#112a1f]">1</span>
+              <button onclick="changeQty('ndole', 1)" aria-label="Augmenter quantité" class="w-7 h-7 rounded-lg bg-[#143729] text-[#f7d37a] font-bold text-sm shadow-sm flex items-center justify-center active:scale-90 transition hover:bg-[#1b4836]">+</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-2xl p-3.5 shadow-sm border border-[#e8e2d5] hover:border-[#d4a316]/60 transition-all flex gap-3.5 relative overflow-hidden" data-id="poulet-dg" data-name="Poulet DG" data-price="4500" data-category="plat">
+        <div class="relative w-28 h-28 rounded-xl overflow-hidden flex-shrink-0 bg-[#f3efe6]">
+          <img src="images/poulet-dg.jpeg" alt="Poulet DG" class="w-full h-full object-cover" loading="lazy">
+          <span class="absolute top-1.5 left-1.5 bg-[#c84b31] text-white text-[10px] font-extrabold px-1.5 py-0.5 rounded shadow">Directeur Général</span>
+        </div>
+        <div class="flex flex-col justify-between flex-1 min-w-0">
+          <div>
+            <h3 class="font-serif-title font-bold text-base text-[#112a1f] leading-snug truncate">Poulet DG</h3>
+            <p class="text-xs text-[#6e665e] line-clamp-2 mt-1 leading-relaxed">Morceaux de poulet fermier doré, rondelles de plantains mûrs frits, poivrons, carottes et sauce aromatique.</p>
+          </div>
+          <div class="flex items-center justify-between mt-2 pt-1 border-t border-[#f4f0e8]">
+            <span class="text-base font-extrabold text-[#143729]">4 500 <span class="text-xs font-semibold text-[#8c7a65]">FCFA</span></span>
+            <div class="flex items-center gap-2 bg-[#f6f2e9] rounded-xl p-1 border border-[#e4dccf]">
+              <button onclick="changeQty('poulet-dg', -1)" aria-label="Diminuer quantité" class="w-7 h-7 rounded-lg bg-white text-[#143729] font-bold text-sm shadow-sm flex items-center justify-center active:scale-90 transition hover:bg-[#eae3d4]">-</button>
+              <span id="qty-poulet-dg" class="w-5 text-center text-sm font-extrabold text-[#112a1f]">0</span>
+              <button onclick="changeQty('poulet-dg', 1)" aria-label="Augmenter quantité" class="w-7 h-7 rounded-lg bg-[#143729] text-[#f7d37a] font-bold text-sm shadow-sm flex items-center justify-center active:scale-90 transition hover:bg-[#1b4836]">+</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-2xl p-3.5 shadow-sm border border-[#e8e2d5] hover:border-[#d4a316]/60 transition-all flex gap-3.5 relative overflow-hidden" data-id="poisson-braise" data-name="Poisson braisé" data-price="4000" data-category="plat">
+        <div class="relative w-28 h-28 rounded-xl overflow-hidden flex-shrink-0 bg-[#f3efe6]">
+          <img src="images/poisson-braise.jpeg" alt="Poisson braisé" class="w-full h-full object-cover" loading="lazy">
+          <span class="absolute top-1.5 left-1.5 bg-[#143729] text-[#e8f7ee] text-[10px] font-bold px-1.5 py-0.5 rounded shadow">Braise Douala</span>
+        </div>
+        <div class="flex flex-col justify-between flex-1 min-w-0">
+          <div>
+            <h3 class="font-serif-title font-bold text-base text-[#112a1f] leading-snug truncate">Poisson braisé</h3>
+            <p class="text-xs text-[#6e665e] line-clamp-2 mt-1 leading-relaxed">Bar ou carpe entière grillée au feu de bois, marinade secrète (ndjansang, pébé), piment frais et oignons.</p>
+          </div>
+          <div class="flex items-center justify-between mt-2 pt-1 border-t border-[#f4f0e8]">
+            <span class="text-base font-extrabold text-[#143729]">4 000 <span class="text-xs font-semibold text-[#8c7a65]">FCFA</span></span>
+            <div class="flex items-center gap-2 bg-[#f6f2e9] rounded-xl p-1 border border-[#e4dccf]">
+              <button onclick="changeQty('poisson-braise', -1)" aria-label="Diminuer quantité" class="w-7 h-7 rounded-lg bg-white text-[#143729] font-bold text-sm shadow-sm flex items-center justify-center active:scale-90 transition hover:bg-[#eae3d4]">-</button>
+              <span id="qty-poisson-braise" class="w-5 text-center text-sm font-extrabold text-[#112a1f]">0</span>
+              <button onclick="changeQty('poisson-braise', 1)" aria-label="Augmenter quantité" class="w-7 h-7 rounded-lg bg-[#143729] text-[#f7d37a] font-bold text-sm shadow-sm flex items-center justify-center active:scale-90 transition hover:bg-[#1b4836]">+</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-2xl p-3.5 shadow-sm border border-[#e8e2d5] hover:border-[#d4a316]/60 transition-all flex gap-3.5 relative overflow-hidden" data-id="eru" data-name="Eru" data-price="3800" data-category="plat">
+        <div class="relative w-28 h-28 rounded-xl overflow-hidden flex-shrink-0 bg-[#f3efe6]">
+          <img src="images/eru-traditionnel.jpeg" alt="Plat Eru traditionnel" class="w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="flex flex-col justify-between flex-1 min-w-0">
+          <div>
+            <h3 class="font-serif-title font-bold text-base text-[#112a1f] leading-snug truncate">Eru traditionnel</h3>
+            <p class="text-xs text-[#6e665e] line-clamp-2 mt-1 leading-relaxed">Feuilles d'okazi finement hachées et waterleaf, peau de bœuf (canda), écrevisses et huile de palme pure.</p>
+          </div>
+          <div class="flex items-center justify-between mt-2 pt-1 border-t border-[#f4f0e8]">
+            <span class="text-base font-extrabold text-[#143729]">3 800 <span class="text-xs font-semibold text-[#8c7a65]">FCFA</span></span>
+            <div class="flex items-center gap-2 bg-[#f6f2e9] rounded-xl p-1 border border-[#e4dccf]">
+              <button onclick="changeQty('eru', -1)" aria-label="Diminuer quantité" class="w-7 h-7 rounded-lg bg-white text-[#143729] font-bold text-sm shadow-sm flex items-center justify-center active:scale-90 transition hover:bg-[#eae3d4]">-</button>
+              <span id="qty-eru" class="w-5 text-center text-sm font-extrabold text-[#112a1f]">0</span>
+              <button onclick="changeQty('eru', 1)" aria-label="Augmenter quantité" class="w-7 h-7 rounded-lg bg-[#143729] text-[#f7d37a] font-bold text-sm shadow-sm flex items-center justify-center active:scale-90 transition hover:bg-[#1b4836]">+</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-2xl p-3.5 shadow-sm border border-[#e8e2d5] hover:border-[#d4a316]/60 transition-all flex gap-3.5 relative overflow-hidden" data-id="miondo" data-name="Miondo x5" data-price="1000" data-category="accompagnement">
+        <div class="relative w-28 h-28 rounded-xl overflow-hidden flex-shrink-0 bg-[#f3efe6]">
+          <img src="images/miondo.jpeg" alt="Miondo x5" class="w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="flex flex-col justify-between flex-1 min-w-0">
+          <div>
+            <h3 class="font-serif-title font-bold text-base text-[#112a1f] leading-snug truncate">Miondo (Bâtons de manioc x5)</h3>
+            <p class="text-xs text-[#6e665e] line-clamp-2 mt-1 leading-relaxed">Bâtons de manioc cuits à la vapeur dans leur feuille de bananier. Idéal avec le poisson ou le ndolé.</p>
+          </div>
+          <div class="flex items-center justify-between mt-2 pt-1 border-t border-[#f4f0e8]">
+            <span class="text-base font-extrabold text-[#143729]">1 000 <span class="text-xs font-semibold text-[#8c7a65]">FCFA</span></span>
+            <div class="flex items-center gap-2 bg-[#f6f2e9] rounded-xl p-1 border border-[#e4dccf]">
+              <button onclick="changeQty('miondo', -1)" aria-label="Diminuer quantité" class="w-7 h-7 rounded-lg bg-white text-[#143729] font-bold text-sm shadow-sm flex items-center justify-center active:scale-90 transition hover:bg-[#eae3d4]">-</button>
+              <span id="qty-miondo" class="w-5 text-center text-sm font-extrabold text-[#112a1f]">1</span>
+              <button onclick="changeQty('miondo', 1)" aria-label="Augmenter quantité" class="w-7 h-7 rounded-lg bg-[#143729] text-[#f7d37a] font-bold text-sm shadow-sm flex items-center justify-center active:scale-90 transition hover:bg-[#1b4836]">+</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-2xl p-3.5 shadow-sm border border-[#e8e2d5] hover:border-[#d4a316]/60 transition-all flex gap-3.5 relative overflow-hidden" data-id="bissap" data-name="Jus de bissap" data-price="1000" data-category="boisson">
+        <div class="relative w-28 h-28 rounded-xl overflow-hidden flex-shrink-0 bg-[#f3efe6]">
+          <img src="images/bissap.jpeg" alt="Jus de bissap frais" class="w-full h-full object-cover" loading="lazy">
+          <span class="absolute top-1.5 left-1.5 bg-[#8b1538] text-white text-[10px] font-bold px-1.5 py-0.5 rounded shadow">Frais &amp; Glacé</span>
+        </div>
+        <div class="flex flex-col justify-between flex-1 min-w-0">
+          <div>
+            <h3 class="font-serif-title font-bold text-base text-[#112a1f] leading-snug truncate">Jus de bissap maison</h3>
+            <p class="text-xs text-[#6e665e] line-clamp-2 mt-1 leading-relaxed">Infusion de fleurs d'hibiscus rouge, menthe sauvage fraîche et pointe de citron vert pressé. Servi très frais.</p>
+          </div>
+          <div class="flex items-center justify-between mt-2 pt-1 border-t border-[#f4f0e8]">
+            <span class="text-base font-extrabold text-[#143729]">1 000 <span class="text-xs font-semibold text-[#8c7a65]">FCFA</span></span>
+            <div class="flex items-center gap-2 bg-[#f6f2e9] rounded-xl p-1 border border-[#e4dccf]">
+              <button onclick="changeQty('bissap', -1)" aria-label="Diminuer quantité" class="w-7 h-7 rounded-lg bg-white text-[#143729] font-bold text-sm shadow-sm flex items-center justify-center active:scale-90 transition hover:bg-[#eae3d4]">-</button>
+              <span id="qty-bissap" class="w-5 text-center text-sm font-extrabold text-[#112a1f]">1</span>
+              <button onclick="changeQty('bissap', 1)" aria-label="Augmenter quantité" class="w-7 h-7 rounded-lg bg-[#143729] text-[#f7d37a] font-bold text-sm shadow-sm flex items-center justify-center active:scale-90 transition hover:bg-[#1b4836]">+</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="p-3.5 bg-[#edf4f0] rounded-2xl border border-[#cfe2d7] text-xs text-[#1e4a36] flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-[#1b4332] text-[#f7d37a] flex items-center justify-center font-bold text-sm flex-shrink-0">🛵</div>
+        <p class="leading-snug"><strong class="font-bold">Livraison à Douala :</strong> Bonapriso, Akwa, Bonanjo, Deido, Bali &amp; environs. Paiement à la réception ou Orange/MTN MoMo.</p>
+      </div>
+    </div>
+
+    <div class="fixed sm:absolute bottom-0 left-0 right-0 max-w-[440px] mx-auto bg-white/95 backdrop-blur-md border-t border-[#e2dacb] p-4 shadow-[0_-8px_25px_rgba(0,0,0,0.12)] z-30 transition-all duration-300">
+      <div class="flex items-center justify-between mb-2 px-1">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#25D366]"></span>
+          <span class="text-xs font-semibold text-[#5a5249]">Total commande (<span id="cart-item-count" class="font-bold text-[#143729]">3</span> articles) :</span>
+        </div>
+        <div class="text-right">
+          <span id="cart-total-price" class="text-xl font-extrabold text-[#143729]">5 500</span>
+          <span class="text-xs font-bold text-[#b8860b]">FCFA</span>
+        </div>
+      </div>
+
+      <a id="whatsapp-order-btn" href="#" onclick="handleWhatsAppOrder(event)" class="w-full bg-[#25D366] hover:bg-[#20ba59] active:scale-[0.98] text-white font-bold py-3.5 px-4 rounded-2xl flex items-center justify-center gap-2.5 shadow-lg shadow-[#25d366]/25 transition-all text-base group">
+        <svg class="w-6 h-6 fill-current text-white flex-shrink-0 transition-transform group-hover:scale-110" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        <span class="tracking-wide">Commander sur WhatsApp</span>
+      </a>
+
+      <p class="text-[11px] text-center text-[#736a61] mt-1.5 flex items-center justify-center gap-1.5">
+        <span>🔒 Direct avec le gérant</span><span>•</span><span>Pas besoin de créer un compte</span>
+      </p>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
