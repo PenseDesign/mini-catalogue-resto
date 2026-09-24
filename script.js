@@ -6,12 +6,12 @@
 const WHATSAPP_NUMBER = "237691691945";
 
 const cart = {
-  'ndole':          { name: 'Ndolé complet', price: 3500, qty: 1 },
+  'ndole':          { name: 'Ndolé complet', price: 3500, qty: 0 },
   'poulet-dg':       { name: 'Poulet DG', price: 4500, qty: 0 },
   'poisson-braise':  { name: 'Poisson braisé', price: 4000, qty: 0 },
   'eru':             { name: 'Eru traditionnel', price: 3800, qty: 0 },
-  'miondo':          { name: 'Miondo (Bâtons de manioc x5)', price: 1000, qty: 1 },
-  'bissap':          { name: 'Jus de bissap maison', price: 1000, qty: 1 }
+  'miondo':          { name: 'Miondo (Bâtons de manioc x5)', price: 1000, qty: 0 },
+  'bissap':          { name: 'Jus de bissap maison', price: 1000, qty: 0 }
 };
 
 function updateCartUI() {
